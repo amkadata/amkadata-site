@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amka Data</title>
+<meta name="description" content="Amka Data connects founders of closing and recently closed software startups with reputable buyers of their historical business data.">
+<meta property="og:title" content="Amka Data">
+<meta property="og:description" content="A second life for the data your company leaves behind.">
+<meta property="og:url" content="https://amkadata.com">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%232f2a22'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='%23e9dcc4'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sand: #f3ece0;
+    --sand-deep: #e9dcc4;
+    --ink: #2f2a22;
+    --ink-soft: #4a4237;
+    --clay: #a4562f;
+    --clay-dark: #86441f;
+    --sage: #6f7a5e;
+    --line: #d8c9ae;
+    --serif: "Cormorant Garamond", Georgia, serif;
+    --sans: "Jost", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--sand);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .eyebrow {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--clay);
+  }
+
+  /* Nav */
+  nav { padding: 28px 0; }
+  nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+  .logo {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+  }
+  .nav-link {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid var(--ink);
+    padding-bottom: 2px;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 96px 0 120px;
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(ellipse at 85% 20%, rgba(164,86,47,0.10), transparent 55%),
+      radial-gradient(ellipse at 10% 90%, rgba(111,122,94,0.12), transparent 50%);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(44px, 7vw, 84px);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    max-width: 14ch;
+    margin: 20px 0 32px;
+  }
+  .hero h1 em { font-style: italic; color: var(--clay); }
+  .hero p { max-width: 560px; color: var(--ink-soft); font-size: 19px; }
+  .btn {
+    display: inline-block;
+    margin-top: 40px;
+    background: var(--ink);
+    color: var(--sand);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 18px 34px;
+    transition: background 0.2s ease;
+  }
+  .btn:hover { background: var(--clay-dark); }
+
+  /* Sections */
+  section { padding: 100px 0; border-bottom: 1px solid var(--line); }
+  h2 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(32px, 4.5vw, 48px);
+    line-height: 1.15;
+    margin: 16px 0 28px;
+    max-width: 20ch;
+  }
+  .lead { max-width: 640px; color: var(--ink-soft); }
+  .lead + .lead { margin-top: 18px; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px;
+    margin-top: 56px;
+  }
+  .step-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 44px;
+    color: var(--clay);
+    line-height: 1;
+  }
+  .step h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 26px;
+    margin: 18px 0 10px;
+  }
+  .step p { color: var(--ink-soft); font-size: 17px; }
+  .step { border-top: 1px solid var(--line); padding-top: 28px; }
+
+  .dark {
+    background: var(--ink);
+    color: var(--sand);
+    border-bottom: none;
+  }
+  .dark .eyebrow { color: #d9a27f; }
+  .dark .lead { color: #d9cdb7; }
+  .promises {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 56px;
+    margin-top: 48px;
+    list-style: none;
+  }
+  .promises li {
+    border-top: 1px solid rgba(233,220,196,0.25);
+    padding-top: 20px;
+    color: #e3d7c1;
+  }
+  .promises strong {
+    display: block;
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 24px;
+    color: var(--sand);
+    margin-bottom: 6px;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .note {
+    background: var(--sand-deep);
+    padding: 36px;
+    border-left: 3px solid var(--sage);
+  }
+  .note .eyebrow { color: var(--sage); }
+  .note p { margin-top: 12px; color: var(--ink-soft); font-size: 17px; }
+
+  .contact { text-align: center; border-bottom: none; }
+  .contact h2 { margin-left: auto; margin-right: auto; }
+  .contact .lead { margin: 0 auto; }
+  .email {
+    display: inline-block;
+    margin-top: 24px;
+    font-family: var(--serif);
+    font-size: clamp(26px, 4vw, 36px);
+    text-decoration: none;
+    border-bottom: 1px solid var(--clay);
+  }
+  .email:hover { color: var(--clay); }
+
+  footer {
+    background: var(--sand-deep);
+    padding: 36px 0;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  footer em { font-family: var(--serif); font-size: 17px; }
+
+  .tools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 48px;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .tool {
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 26px 24px;
+  }
+  .tool h3 { font-family: var(--serif); font-weight: 500; font-size: 23px; }
+  .tool p { font-size: 15px; color: var(--ink-soft); margin-top: 4px; line-height: 1.55; }
+  .fine { margin-top: 28px; font-size: 15px; color: var(--ink-soft); max-width: 640px; }
+  .portrait { position: relative; }
+  .portrait img { width: 100%; display: block; filter: saturate(0.88) contrast(1.02); }
+  .portrait figcaption { font-size: 13px; color: var(--ink-soft); margin-top: 10px; letter-spacing: 0.04em; }
+  .links { margin-top: 28px; display: flex; gap: 28px; flex-wrap: wrap; }
+  .links a {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase;
+    text-decoration: none; border-bottom: 1px solid var(--clay); padding-bottom: 2px;
+  }
+  .faq { margin-top: 48px; max-width: 760px; }
+  .faq details { border-top: 1px solid var(--line); padding: 22px 0; }
+  .faq details:last-child { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    font-family: var(--serif); font-size: 24px; font-weight: 500; cursor: pointer;
+    list-style: none; display: flex; justify-content: space-between; gap: 16px;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; color: var(--clay); font-family: var(--sans); font-weight: 300; }
+  .faq details[open] summary::after { content: "\2013"; }
+  .faq details p { margin-top: 12px; color: var(--ink-soft); }
+
+  @media (max-width: 760px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 20px; }
+    .hero { padding: 56px 0 80px; }
+    section { padding: 72px 0; }
+    .steps, .promises, .split { grid-template-columns: 1fr; gap: 36px; }
+    .tools { grid-template-columns: 1fr 1fr; }
+    .tool { padding: 20px 16px; }
+    .faq summary { font-size: 21px; }
+    .note { padding: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">Amka Data</a>
+    <a href="#contact" class="nav-link">Get in touch</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">For founders closing a software company</div>
+    <h1>A second life for the data your company <em>leaves behind.</em></h1>
+    <p>Closing a company means writing off years of work. The code history, tickets, docs and internal knowledge you built can still have value. AI companies license this kind of historical business data to train and test their models.</p>
+    <a href="#contact" class="btn">Start a conversation</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">What I do</div>
+    <h2>I connect founders with reputable buyers of business data.</h2>
+    <p class="lead">Amka Data works with founders of software startups that are closing or have recently closed, mainly in the UK and US. If your data is likely to interest a buyer, I make the introduction, so the work your team did earns something before the company is gone.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">i.</div>
+        <h3>A short conversation</h3>
+        <p>We look at which systems your company used and whether the data is likely to interest buyers.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">ii.</div>
+        <h3>An introduction</h3>
+        <p>If it's a fit, I introduce you to a buyer. They assess the data, handle de-identification, and make you an offer.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">iii.</div>
+        <h3>You decide</h3>
+        <p>The licence is between you and the buyer. You stay in control throughout, and nothing moves without your agreement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">What data qualifies</div>
+    <h2>The everyday records of how your team worked.</h2>
+    <p class="lead">Buyers are most interested in real working history: how problems were discussed, planned, built and fixed. If your company used tools like these for a few years, there may be something worth looking at.</p>
+    <div class="tools">
+      <div class="tool"><h3>Code</h3><p>GitHub, GitLab, Bitbucket: commits, pull requests, reviews</p></div>
+      <div class="tool"><h3>Tickets</h3><p>Jira, Linear, Asana: issues, sprints, project history</p></div>
+      <div class="tool"><h3>Docs</h3><p>Notion, Confluence, Google Drive: specs, wikis, processes</p></div>
+      <div class="tool"><h3>Chat</h3><p>Slack, Teams: working conversations between the team</p></div>
+      <div class="tool"><h3>Support</h3><p>Zendesk, Intercom: customer issues and how they were solved</p></div>
+      <div class="tool"><h3>Sales</h3><p>HubSpot, Salesforce: pipeline and account workflows</p></div>
+      <div class="tool"><h3>Product</h3><p>Analytics events, logs, design files</p></div>
+      <div class="tool"><h3>Something else?</h3><p>Ask. Specialised datasets can be valuable too.</p></div>
+    </div>
+    <p class="fine">Customer names and personal details are stripped out by the buyer before any data is used. Companies in regulated or sensitive sectors are only considered with their own lawyer's sign-off.</p>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="eyebrow">How I work</div>
+    <h2>Clear terms, from the first conversation.</h2>
+    <ul class="promises">
+      <li><strong>I never touch your data</strong>I don't hold, copy or process it. It goes from you to the buyer under your licence.</li>
+      <li><strong>Nothing upfront</strong>I don't charge you anything to start. Any commission is agreed with you in writing before an introduction.</li>
+      <li><strong>Careful with sensitive sectors</strong>I don't work with companies in regulated or sensitive sectors unless their own lawyer has signed off.</li>
+      <li><strong>No pressure</strong>If a sale isn't right for you, we stop there. You owe nothing.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <div class="eyebrow">Why I'm doing this</div>
+      <h2>Hi, I'm Paul Kidero.</h2>
+      <p class="lead">I believe data matters. For years, the Slack threads, tickets and code of a closed company were worth nothing once the doors shut. They sat in an archive until someone deleted them.</p>
+      <p class="lead">AI has changed that almost overnight. The records of how real teams worked are now some of the most useful material for training and testing AI, and companies are paying for them. I want to play a small part in making sure founders get something back from that work, instead of it quietly disappearing.</p>
+      <p class="lead">I'm based in Nairobi and work with founders in the UK, US and East Africa. I'm also Kenya Lead at Intro Africa. Amka means "wake up" in Swahili: waking up data that would otherwise go to waste.</p>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/paul-kidero-31460390" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:paul@amkadata.com">Email</a>
+      </div>
+    </div>
+    <figure class="portrait">
+      <img src="paul.jpg" alt="Paul Kidero speaking at an event" width="640" height="800">
+      <figcaption>Paul Kidero, founder of Amka Data</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Common questions</div>
+    <h2>What founders usually ask.</h2>
+    <div class="faq">
+      <details>
+        <summary>What could my data be worth?</summary>
+        <p>It depends on how much history there is, how complete it is, and what buyers want at the time. Published buyer ranges start in the tens of thousands of dollars. Some companies won't qualify, and I'll tell you honestly if yours is unlikely to.</p>
+      </details>
+      <details>
+        <summary>Who are the buyers?</summary>
+        <p>Companies that license business data to AI developers. I talk to several, so I can introduce you to whichever fits your data best. You'll know exactly who they are before you share anything.</p>
+      </details>
+      <details>
+        <summary>What about personal data and confidentiality?</summary>
+        <p>Buyers de-identify the data, removing names, emails and customer details, before it's used. You agree the terms of the licence, including what's excluded. If something is too sensitive to share, it stays out.</p>
+      </details>
+      <details>
+        <summary>What does it cost me?</summary>
+        <p>Nothing upfront. If a sale happens, any commission is agreed with you in writing before I make the introduction. If you decide not to go ahead, you owe nothing.</p>
+      </details>
+      <details>
+        <summary>My UK company is being struck off. Is it too late?</summary>
+        <p>Not if you move quickly. Once a company is dissolved, its assets pass to the Crown, so a sale needs to complete before then. Dissolution usually follows about two months after the Gazette notice. The earlier we talk, the more options you have.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="eyebrow">Get in touch</div>
+    <h2>Closing a company? Let's talk before the data is gone.</h2>
+    <p class="lead">A short email is enough to start. Tell me what your company built and which tools you used.</p>
+    <a class="email" href="mailto:paul@amkadata.com">paul@amkadata.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Amka Data</span>
+    <span><a href="https://www.linkedin.com/in/paul-kidero-31460390" target="_blank" rel="noopener">LinkedIn</a> &nbsp;&middot;&nbsp; <em>Amka: wake up.</em></span>
+  </div>
+</footer>
+
+</body>
+</html>
